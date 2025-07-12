@@ -26,8 +26,8 @@ api_key = os.getenv('OPENWEATHERMAP_API_KEY')
 city_name = 'Fukuoka'
 
 # フラグ時間の設定
-flag_run_Time1 = "08:00"
-flag_run_Time2 = "19:00"
+# flag_run_Time1 = "08:00"
+# flag_run_Time2 = "19:00"
 
 def get_weathre():
 
@@ -84,8 +84,12 @@ def job():
 
 # スケジュールの設定
 print("スケジュールを実行します。")
-schedule.every().day.at(flag_run_Time1).do(job)
-schedule.every().day.at(flag_run_Time2).do(job)
+
+job()
+
+# スケジュールの設定
+# schedule.every().day.at(flag_run_Time).do(job)
+# schedule.every().day.at(flag_run_Time2).do(job)
 
 
 #スケジュール実行ループ
